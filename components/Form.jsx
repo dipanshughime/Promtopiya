@@ -7,7 +7,7 @@ import Link from 'next/link';
 const getTopics = async () => {
   try {
     const res = await fetch("http://localhost:3001/api/topics", {
-      cache: "no-store",
+      next:{revalidate:0}
     });
 
     if (!res.ok) {
